@@ -1,0 +1,18 @@
+===================================================================
+FILTROS DE VISUALIZACIÓN RECOMENDADOS EN WIRESHARK / TSHARK
+===================================================================
+
+1. Detección de Escaneo de Puertos (TCP SYN Flood):
+   tcp.flags.syn == 1 and tcp.flags.ack == 0
+
+2. Peticiones HTTP Inseguras (POST / Credenciales):
+   http.request.method == "POST"
+
+3. Tráfico HTTP con Errores o Respuestas Denegadas:
+   http.response.code >= 400
+
+4. Tráfico DNS Anómalo / Consultas Masivas:
+   dns.flags.response == 0
+
+5. Filtrar por IP Origen y Destino Específica:
+   ip.addr == 192.168.1.105
